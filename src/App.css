@@ -32,7 +32,7 @@ body {
   scrollbar-width: none; 
   scroll-behavior: smooth;
 
-  padding: 200px 0;
+  padding: 300px 0;
 
   box-sizing: border-box;
 }
@@ -70,7 +70,6 @@ body {
   opacity: 1;
   filter: none;
   z-index: 10;
-  /* padding: 50px; <- remova esta linha */
 }
 
 .card img {
@@ -138,4 +137,252 @@ body {
 
 .right {
   right: 20px;
+}
+
+/* MOVIE PAGE */
+.movie-page {
+  min-height: 100vh;
+  background: #14181c;
+  color: #eaeaea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* BANNER */
+.movie-banner {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  opacity: 0.5;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, transparent 100%);
+}
+
+/* CONTEÚDO ABAIXO DO BANNER */
+.movie-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 80px;
+  padding: 60px 120px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: -120px;
+}
+
+/* INFORMAÇÕES À ESQUERDA */
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.movie-info h1 {
+  font-size: 52px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 10px;
+  line-height: 1.1;
+}
+
+.movie-info p {
+  font-size: 22px;
+  color: #9aa0a6;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.movie-info p span {
+  color: #eaeaea;
+  font-weight: 600;
+}
+
+/* SINOPSE COM DESTAQUE */
+.movie-info .sinopse {
+  font-size: 18px;
+  color: #b0b8c1;
+  line-height: 1.8;
+  margin-top: 10px;
+  max-width: 700px;
+}
+
+/* POSTER À DIREITA */
+.movie-poster {
+  width: 320px;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.95);
+  flex-shrink: 0;
+}
+
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+
+  /* força o fundo branco */
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+
+  color: #000000 !important;
+
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+
+  border-radius: 8px;
+  border: 1px solid #ddd;
+
+  cursor: pointer;
+
+  /* evita transparência herdada */
+  opacity: 1 !important;
+
+  /* garante que fique acima de tudo */
+  z-index: 9999;
+
+  /* tira efeitos estranhos */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+} 
+
+.analise-root {
+  width: 100%;
+  max-width: 1200px; /* bem mais largo */
+  margin: 5px auto 0 auto; /* sobe mais */
+  padding: 10px 20px;
+}
+
+/* layout principal LADO A LADO */
+.analise-form {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+/* textarea ocupa quase tudo */
+.analise-textarea {
+  flex: 1; /* ocupa o máximo possível */
+  height: 120px;
+
+  padding: 12px;
+
+  background: #181c22;
+  border: 1px solid #2c323c;
+  border-radius: 8px;
+
+  color: #fff;
+  font-size: 15px;
+
+  resize: none;
+}
+
+/* lado direito (nota + botão) */
+.analise-side {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* input */
+.analise-input {
+  width: 100px;
+  padding: 8px;
+
+  background: #181c22;
+  border: 1px solid #2c323c;
+  border-radius: 6px;
+
+  color: #fff;
+}
+
+/* botão */
+.analise-button {
+  padding: 10px 14px;
+
+  background: #fff;
+  color: #000;
+
+  border: none;
+  border-radius: 6px;
+
+  cursor: pointer;
+}
+
+/* LISTA */
+.analise-lista {
+  margin-top: 40px; /* mais afastado do form */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* espaço entre análises */
+}
+
+/* CARD (caixa leve/transparente) */
+.analise-card {
+  padding: 20px;
+
+  background: rgba(255, 255, 255, 0.03); /* TRANSPARENTE */
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  border-radius: 12px;
+
+  backdrop-filter: blur(6px); /* efeito vidro */
+  -webkit-backdrop-filter: blur(6px);
+
+  transition: all 0.2s ease;
+}
+
+/* hover sutil */
+.analise-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* HEADER */
+.analise-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 10px;
+}
+
+/* filme */
+.analise-filme {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* nota */
+.analise-nota {
+  font-size: 14px;
+  color: #b0b0b0;
+}
+
+/* TEXTO (principal destaque) */
+.analise-texto {
+  font-size: 18px; /* MAIOR */
+  line-height: 1.8; /* mais respirado */
+  color: #e6e6e6;
+
+  max-width: 750px; /* elegante */
+}
+
+.analise-lista button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  align-self: flex-end;
+  background: #ff4c4c;
+  color: #fff;
+
+  border: none;
+  border-radius: 6px;
+
+  cursor: pointer;
 }

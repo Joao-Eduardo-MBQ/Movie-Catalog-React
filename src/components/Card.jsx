@@ -1,10 +1,13 @@
-import { useEffect, useState, useRef, use } from "react";
+import { useEffect, useState, useRef } from "react";
+import ReactDOM from 'react-dom/client';
 import Movies from "./Movies";
+import { useNavigate } from 'react-router-dom';
 
 import React from 'react'
 
 const Card = () => {
   const [index, setIndex] = useState(0);
+  const navigate = useNavigate();
   const containerRef = useRef(null);
   const itemsRef = useRef([]);
   const cards = Movies();
@@ -25,8 +28,6 @@ useEffect(() => {
     const containerWidth = container.offsetWidth;
     const itemLeft = activeItem.offsetLeft;
     const itemWidth = activeItem.offsetWidth;
-
-    // Pega o centro do card (sem scale) e centraliza ele na tela
     const itemCenter = itemLeft + itemWidth / 2;
     const scrollPosition = itemCenter - containerWidth / 2;
 
@@ -38,6 +39,8 @@ useEffect(() => {
 }, [index]);
 
   return (
+
+    
 
     <div className="card-container">
 
@@ -55,7 +58,11 @@ useEffect(() => {
             ref={(el) => (itemsRef.current[i] = el)}
             className={`card ${i === 0 ? 'first' : ''} ${i === cards.length - 1 ? 'last' : ''} ${i === index ? "active" : ""}`}
           >
-            <img src={card.imagem} alt={card.filme} />
+            <img 
+            src={card.imagem} 
+            alt={card.filme} 
+            onClick={() => navigate(`/moviepag/${card.id}`)} 
+            />
             <h3>{card.filme}</h3>
             <p>{card.genero}</p>
             <p>{card.ano}</p>
