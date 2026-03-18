@@ -2,22 +2,19 @@ import React, { useState, useEffect } from 'react';
 
 const Analise = ({ MovieId, movieName }) => {
 
-  // 🔥 carrega do localStorage
   const [analises, setAnalises] = useState(() => {
     const saved = localStorage.getItem("analises");
     return saved ? JSON.parse(saved) : [];
   });
 
-  // 🔥 salva automaticamente
   useEffect(() => {
     localStorage.setItem("analises", JSON.stringify(analises));
   }, [analises]);
 
-  // 🔥 adicionar análise
   const addanalise = (analise, nota) => {
     const newAnalise = {
-      id: Date.now(),      // id único da análise
-      movieId: MovieId,    // id do filme
+      id: Date.now(),      
+      movieId: MovieId,    
       filme: movieName,
       analise,
       nota
@@ -26,7 +23,6 @@ const Analise = ({ MovieId, movieName }) => {
     setAnalises([...analises, newAnalise]);
   };
 
-  // 🔥 filtra só as análises desse filme
   const analisesDoFilme = analises.filter(
     (a) => a.movieId == MovieId
   );

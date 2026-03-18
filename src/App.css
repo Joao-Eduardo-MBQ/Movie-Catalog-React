@@ -37,7 +37,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Espaço à esquerda/direita para centralizar o card ativo */
 .card.first {
   margin-left: calc(50vw - 120px);
 }
@@ -139,7 +138,6 @@ body {
   right: 20px;
 }
 
-/* MOVIE PAGE */
 .movie-page {
   min-height: 100vh;
   background: #14181c;
@@ -149,7 +147,6 @@ body {
   align-items: center;
 }
 
-/* BANNER */
 .movie-banner {
   width: 100%;
   height: 500px;
@@ -159,7 +156,6 @@ body {
   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, transparent 100%);
 }
 
-/* CONTEÚDO ABAIXO DO BANNER */
 .movie-content {
   display: flex;
   flex-direction: row;
@@ -171,7 +167,6 @@ body {
   margin-top: -120px;
 }
 
-/* INFORMAÇÕES À ESQUERDA */
 .movie-info {
   display: flex;
   flex-direction: column;
@@ -199,7 +194,6 @@ body {
   font-weight: 600;
 }
 
-/* SINOPSE COM DESTAQUE */
 .movie-info .sinopse {
   font-size: 18px;
   color: #b0b8c1;
@@ -208,7 +202,6 @@ body {
   max-width: 700px;
 }
 
-/* POSTER À DIREITA */
 .movie-poster {
   width: 320px;
   height: 480px;
@@ -223,7 +216,6 @@ body {
   top: 20px;
   left: 20px;
 
-  /* força o fundo branco */
   background: #ffffff !important;
   background-color: #ffffff !important;
 
@@ -238,13 +230,10 @@ body {
 
   cursor: pointer;
 
-  /* evita transparência herdada */
   opacity: 1 !important;
 
-  /* garante que fique acima de tudo */
   z-index: 9999;
 
-  /* tira efeitos estranhos */
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
 
@@ -253,21 +242,19 @@ body {
 
 .analise-root {
   width: 100%;
-  max-width: 1200px; /* bem mais largo */
-  margin: 5px auto 0 auto; /* sobe mais */
+  max-width: 1200px; 
+  margin: 5px auto 0 auto; 
   padding: 10px 20px;
 }
 
-/* layout principal LADO A LADO */
 .analise-form {
   display: flex;
   align-items: flex-start;
   gap: 15px;
 }
 
-/* textarea ocupa quase tudo */
 .analise-textarea {
-  flex: 1; /* ocupa o máximo possível */
+  flex: 1; 
   height: 120px;
 
   padding: 12px;
@@ -282,14 +269,12 @@ body {
   resize: none;
 }
 
-/* lado direito (nota + botão) */
 .analise-side {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-/* input */
 .analise-input {
   width: 100px;
   padding: 8px;
@@ -301,7 +286,6 @@ body {
   color: #fff;
 }
 
-/* botão */
 .analise-button {
   padding: 10px 14px;
 
@@ -314,36 +298,32 @@ body {
   cursor: pointer;
 }
 
-/* LISTA */
 .analise-lista {
-  margin-top: 40px; /* mais afastado do form */
+  margin-top: 40px; 
   display: flex;
   flex-direction: column;
-  gap: 20px; /* espaço entre análises */
+  gap: 20px; 
 }
 
-/* CARD (caixa leve/transparente) */
 .analise-card {
   padding: 20px;
 
-  background: rgba(255, 255, 255, 0.03); /* TRANSPARENTE */
+  background: rgba(255, 255, 255, 0.03); 
   border: 1px solid rgba(255, 255, 255, 0.06);
 
   border-radius: 12px;
 
-  backdrop-filter: blur(6px); /* efeito vidro */
+  backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 
   transition: all 0.2s ease;
 }
 
-/* hover sutil */
 .analise-card:hover {
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* HEADER */
 .analise-header {
   display: flex;
   justify-content: space-between;
@@ -352,26 +332,23 @@ body {
   margin-bottom: 10px;
 }
 
-/* filme */
 .analise-filme {
   font-size: 16px;
   font-weight: 600;
   color: #ffffff;
 }
 
-/* nota */
 .analise-nota {
   font-size: 14px;
   color: #b0b0b0;
 }
 
-/* TEXTO (principal destaque) */
 .analise-texto {
-  font-size: 18px; /* MAIOR */
-  line-height: 1.8; /* mais respirado */
+  font-size: 18px; 
+  line-height: 1.8; 
   color: #e6e6e6;
 
-  max-width: 750px; /* elegante */
+  max-width: 750px; 
 }
 
 .analise-lista button {
