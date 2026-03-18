@@ -38,16 +38,16 @@ body {
 }
 
 .card.first {
-  margin-left: calc(50vw + 3000px);
+  margin-left: calc(50vw + 4000px);
 }
 
 .card.last {
-  margin-right: calc(50vw + 3000px);
+  margin-right: calc(50vw + 4000px);
 }
 .card {
   min-width: 240px;
   height: 480px;
-  scroll-snap-align: center;
+
   background: transparent;
   border-radius: 12px;
 
