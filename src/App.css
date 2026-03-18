@@ -37,13 +37,14 @@ body {
   box-sizing: border-box;
 }
 
+/* Espaço à esquerda/direita para centralizar o card ativo */
 .card.first {
-  margin-left: calc(50vw + 4000px);
+  margin-left: calc(50vw - 120px);
+}
+.card.last {
+  margin-right: calc(50vw - 120px);
 }
 
-.card.last {
-  margin-right: calc(50vw + 4000px);
-}
 .card {
   min-width: 240px;
   height: 480px;
@@ -69,7 +70,7 @@ body {
   opacity: 1;
   filter: none;
   z-index: 10;
-  padding: 50px;
+  /* padding: 50px; <- remova esta linha */
 }
 
 .card img {
