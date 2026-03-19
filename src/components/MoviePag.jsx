@@ -1,11 +1,18 @@
-import React from 'react'
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Movies from './Movies';
 import Analise from './analise';
 
-const MoviePag = () => {
+const MoviePag = ({ desejo, setDesejo }) => {
+
   const { id } = useParams();
   const movie = Movies().find((m) => m.id === parseInt(id));
+
+  const addDesejo = (movie) => {
+    if (desejo.some((m) => m.id === movie.id)) return;
+    setDesejo([...desejo, movie]);
+    localStorage.setItem("desejo", JSON.stringify(novaLista));
+  };
 
   return (
 
@@ -25,6 +32,7 @@ const MoviePag = () => {
         </div>
 
         <img className="movie-poster" src={movie?.imagem} alt={movie?.filme} />
+        <button className="adddesejo-button" onClick={() => addDesejo(movie)}>Adicionar à lista de desejos</button>
       </div>
       
     <div className="analise-root"> 

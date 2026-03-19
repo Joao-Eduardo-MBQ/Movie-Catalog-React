@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import ReactDOM from 'react-dom/client';
 import Movies from "./Movies";
 import { useNavigate } from 'react-router-dom';
 
@@ -39,10 +38,10 @@ useEffect(() => {
 }, [index]);
 
   return (
-
     
-
     <div className="card-container">
+      
+      <button className="desejo-button" onClick={() => navigate(`/desejo`)}> whitelist </button>
 
      <button className="arrow left" onClick={previousCard}>◀</button>
 
